@@ -24,10 +24,6 @@ const logoBadges = ['Até 60% off', 'Cupons do dia', 'Só achadinhos'];
 
 const benefitCards = [
   {
-    title: 'Curadoria diária',
-    text: 'Produtos úteis para cozinha, sem garimpo infinito.',
-  },
-  {
     title: 'Ofertas verificadas',
     text: 'Achados selecionados antes de aparecerem no grupo.',
   },
