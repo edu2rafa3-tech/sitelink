@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist_Mono, Nunito } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const nunito = Nunito({
+  variable: '--font-nunito',
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 const geistMono = Geist_Mono({
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Achadinhos & Ofertas do Dia',
   description:
-    'Grupo de ofertas com achadinhos para cozinha, utensilios, organizadores e pequenos eletros.',
+    'Grupo de ofertas com achadinhos para cozinha, utensílios, organizadores e pequenos eletros.',
 };
 
 export default function RootLayout({
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${nunito.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

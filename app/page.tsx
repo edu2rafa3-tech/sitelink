@@ -11,62 +11,120 @@ function WhatsAppIcon() {
   );
 }
 
+const tickerMessages = [
+  'Ofertas do dia',
+  'Até 60% off',
+  'Achadinhos para cozinha',
+  'Cupons selecionados',
+  'Promoções relâmpago',
+  'Novidades no grupo',
+];
+
+const logoBadges = ['Até 60% off', 'Cupons do dia', 'Só achadinhos'];
+
+const benefitCards = [
+  {
+    title: 'Curadoria diária',
+    text: 'Produtos úteis para cozinha, sem garimpo infinito.',
+  },
+  {
+    title: 'Ofertas verificadas',
+    text: 'Achados selecionados antes de aparecerem no grupo.',
+  },
+  {
+    title: 'Compra mais prática',
+    text: 'Utensílios, organização e pequenos eletros em um só lugar.',
+  },
+];
+
 export default function Home() {
+  const marqueeItems = [...tickerMessages, ...tickerMessages];
+
   return (
     <main className="min-h-dvh overflow-hidden bg-[#fff9f0] text-[#24150d]">
       <section className="relative flex min-h-dvh flex-col">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(255,106,0,0.18),transparent_34%),radial-gradient(circle_at_18%_82%,rgba(255,201,40,0.22),transparent_28%),linear-gradient(180deg,#fffaf2_0%,#fff3e1_58%,#ffe8cf_100%)]" />
-        <div className="absolute left-1/2 top-7 h-[min(72vw,520px)] w-[min(72vw,520px)] -translate-x-1/2 rounded-full border border-[#ff7a1a]/16 bg-white/28 shadow-[0_30px_90px_rgb(255_106_0/12%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/60 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/60 to-transparent" />
 
-        <header className="relative z-10 mx-auto flex w-full max-w-5xl justify-center px-5 pt-7 sm:px-8">
+        <div className="relative z-20 w-full overflow-hidden border-b border-[#ff8a2b]/16 bg-white/58 py-2 shadow-[0_10px_30px_rgb(255_106_0/8%)] backdrop-blur-md">
+          <div className="marquee-track flex w-max items-center gap-4">
+            {marqueeItems.map((message, index) => (
+              <span
+                key={`${message}-${index}`}
+                className="inline-flex items-center gap-4 text-xs font-bold uppercase text-[#b94700]"
+              >
+                <span>{message}</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-[#25d366]" />
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <header className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4 pt-4 sm:px-6">
+          <div className="absolute left-1/2 top-12 hidden h-px w-[min(72vw,520px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#ff8a2b]/28 to-transparent sm:block" />
+          <span className="absolute left-[14%] top-12 hidden rounded-full border border-[#ff8a2b]/18 bg-white/62 px-3 py-1.5 text-xs font-semibold text-[#a94a0a] shadow-[0_10px_24px_rgb(255_106_0/9%)] backdrop-blur sm:inline-flex">
+            ofertas fresquinhas
+          </span>
+          <span className="absolute right-[14%] top-12 hidden rounded-full border border-[#25d366]/20 bg-white/62 px-3 py-1.5 text-xs font-semibold text-[#168f45] shadow-[0_10px_24px_rgb(37_211_102/10%)] backdrop-blur sm:inline-flex">
+            direto no WhatsApp
+          </span>
           <a
             href="/"
-            className="flex flex-col items-center gap-3 text-center"
+            className="relative flex flex-col items-center gap-2 text-center"
             aria-label="Achadinhos & Ofertas do Dia"
           >
             <img
               src="/logo-achadinhos-redonda.png"
               alt="Achadinhos e Ofertas do Dia"
-              className="h-24 w-24 rounded-full object-cover shadow-[0_14px_34px_rgb(255_106_0/22%)] ring-4 ring-white sm:h-28 sm:w-28"
+              className="h-20 w-20 rounded-full object-cover shadow-[0_10px_24px_rgb(255_106_0/16%)] ring-4 ring-white sm:h-24 sm:w-24"
             />
-            <span className="text-sm font-black uppercase leading-tight text-[#24150d]">
+            <span className="text-sm font-bold uppercase leading-tight text-[#24150d]">
               Achadinhos
               <br />
               <span className="text-[#ff6a00]">& Ofertas</span>
             </span>
           </a>
+          <div className="mt-3 flex max-w-[330px] flex-wrap justify-center gap-2">
+            {logoBadges.map((badge) => (
+              <span
+                key={badge}
+                className="rounded-full border border-[#ff8a2b]/18 bg-white/66 px-3 py-1.5 text-xs font-semibold text-[#a94a0a] shadow-[0_8px_20px_rgb(255_106_0/8%)] backdrop-blur"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-5 pb-10 pt-5 text-center sm:px-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-start px-4 pb-6 pt-5 text-center sm:px-6 sm:pt-8">
           <div className="flex max-w-[760px] flex-col items-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ff8a2b]/20 bg-white/72 px-4 py-2 text-xs font-black uppercase text-[#c95000] shadow-[0_12px_30px_rgb(255_106_0/10%)] backdrop-blur">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#ff8a2b]/20 bg-white/72 px-3.5 py-1.5 text-xs font-bold uppercase text-[#c95000] shadow-[0_12px_30px_rgb(255_106_0/10%)] backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-[#25d366]" />
               Produtos de cozinha em oferta
             </div>
 
-            <h1 className="text-balance text-4xl font-black uppercase leading-[0.96] tracking-normal text-[#24150d] sm:text-6xl">
-              Achadinhos para deixar sua cozinha mais pratica
+            <h1 className="text-balance text-4xl font-bold leading-[1.02] tracking-normal text-[#24150d] sm:text-6xl">
+              Achadinhos para deixar sua cozinha mais prática
             </h1>
 
-            <p className="mt-5 max-w-2xl text-lg font-semibold leading-7 text-[#6b4a35] max-sm:text-base">
-              Garimpamos utensilios, organizadores e pequenos eletros com preco
-              bom para voce aproveitar antes que acabe.
+            <p className="mt-4 max-w-2xl text-lg font-medium leading-7 text-[#6b4a35] max-sm:text-base">
+              Garimpamos utensílios, organizadores e pequenos eletros com preço
+              bom para você aproveitar antes que acabe.
             </p>
 
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col items-center gap-2.5 sm:flex-row">
               <a
                 href="https://wa.me/?text=Quero%20entrar%20no%20grupo%20de%20achadinhos%20e%20ofertas%20do%20dia"
-                className="group relative inline-flex min-h-16 items-center gap-3 overflow-hidden rounded-full bg-[#16c75a] px-5 py-4 text-sm font-black uppercase text-white shadow-[0_16px_34px_rgb(22_199_90/30%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#0fa84a]/20 transition hover:-translate-y-0.5 hover:bg-[#13b650] hover:shadow-[0_20px_42px_rgb(22_199_90/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/26 sm:px-8 sm:text-base"
+                className="group relative inline-flex min-h-14 items-center gap-3 overflow-hidden rounded-full bg-[#16c75a] px-4 py-3 text-sm font-bold uppercase text-white shadow-[0_16px_34px_rgb(22_199_90/30%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#0fa84a]/20 transition hover:-translate-y-0.5 hover:bg-[#13b650] hover:shadow-[0_20px_42px_rgb(22_199_90/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/26 sm:px-7 sm:text-base"
               >
                 <span className="absolute inset-x-6 top-0 h-px bg-white/55" />
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
                   <WhatsAppIcon />
                 </span>
                 <span className="leading-none">quero entrar no grupo</span>
                 <span
                   aria-hidden="true"
-                  className="grid h-8 w-8 place-items-center rounded-full bg-white/16 transition group-hover:translate-x-0.5"
+                  className="grid h-7 w-7 place-items-center rounded-full bg-white/16 transition group-hover:translate-x-0.5"
                 >
                   <svg
                     className="h-4 w-4"
@@ -82,9 +140,28 @@ export default function Home() {
                   </svg>
                 </span>
               </a>
-              <span className="rounded-full bg-white/72 px-4 py-3 text-sm font-bold text-[#7b5338] ring-1 ring-[#ff8a2b]/16">
-                Ofertas diarias no WhatsApp
+              <span className="rounded-full bg-white/72 px-3.5 py-2.5 text-sm font-semibold text-[#7b5338] ring-1 ring-[#ff8a2b]/16">
+                Ofertas diárias no WhatsApp
               </span>
+            </div>
+
+            <div className="mt-5 w-full max-w-3xl rounded-[22px] border border-white/70 bg-white/52 p-2.5 shadow-[0_18px_50px_rgb(123_69_23/10%)] backdrop-blur-md">
+              <div className="grid gap-2.5 sm:grid-cols-3">
+                {benefitCards.map((card) => (
+                  <div
+                    key={card.title}
+                    className="rounded-[16px] border border-[#ff8a2b]/12 bg-[#fffaf4]/76 px-4 py-3 text-left shadow-[inset_0_1px_0_rgb(255_255_255/70%)]"
+                  >
+                    <span className="mb-2 block h-1.5 w-8 rounded-full bg-[#ff8a2b]" />
+                    <h2 className="text-sm font-bold text-[#2b170d]">
+                      {card.title}
+                    </h2>
+                    <p className="mt-1 text-sm font-medium leading-5 text-[#7b5338]">
+                      {card.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
