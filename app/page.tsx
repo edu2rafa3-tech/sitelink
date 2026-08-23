@@ -110,7 +110,7 @@ export default function Home() {
 
             <div className="mt-6 flex flex-col items-center gap-2.5 sm:flex-row">
               <a
-                href="https://wa.me/?text=Quero%20entrar%20no%20grupo%20de%20achadinhos%20e%20ofertas%20do%20dia"
+                href="https://chat.whatsapp.com/Iqzfyh1mGPqKMP9QqpO2EO"
                 className="group relative inline-flex min-h-14 items-center gap-3 overflow-hidden rounded-full bg-[#16c75a] px-4 py-3 text-sm font-bold uppercase text-white shadow-[0_16px_34px_rgb(22_199_90/30%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#0fa84a]/20 transition hover:-translate-y-0.5 hover:bg-[#13b650] hover:shadow-[0_20px_42px_rgb(22_199_90/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/26 sm:px-7 sm:text-base"
               >
                 <span className="absolute inset-x-6 top-0 h-px bg-white/55" />
