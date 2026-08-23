@@ -54,36 +54,38 @@ export default function Home() {
               bom para voce aproveitar antes que acabe.
             </p>
 
-            <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
               <a
                 href="https://wa.me/?text=Quero%20entrar%20no%20grupo%20de%20achadinhos%20e%20ofertas%20do%20dia"
-                className="inline-flex h-14 items-center gap-3 rounded-full border border-[#19b85a]/25 bg-[#25d366] px-7 text-base font-black uppercase text-[#052412] shadow-[0_12px_28px_rgb(37_211_102/24%)] transition hover:-translate-y-0.5 hover:bg-[#33df73] focus:outline-none focus:ring-4 focus:ring-[#25d366]/24"
+                className="group relative inline-flex min-h-16 items-center gap-3 overflow-hidden rounded-full bg-[#16c75a] px-5 py-4 text-sm font-black uppercase text-white shadow-[0_16px_34px_rgb(22_199_90/30%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#0fa84a]/20 transition hover:-translate-y-0.5 hover:bg-[#13b650] hover:shadow-[0_20px_42px_rgb(22_199_90/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/26 sm:px-8 sm:text-base"
               >
-                <WhatsAppIcon />
-                quero entrar no grupo
+                <span className="absolute inset-x-6 top-0 h-px bg-white/55" />
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
+                  <WhatsAppIcon />
+                </span>
+                <span className="leading-none">quero entrar no grupo</span>
+                <span
+                  aria-hidden="true"
+                  className="grid h-8 w-8 place-items-center rounded-full bg-white/16 transition group-hover:translate-x-0.5"
+                >
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m13 6 6 6-6 6" />
+                  </svg>
+                </span>
               </a>
               <span className="rounded-full bg-white/72 px-4 py-3 text-sm font-bold text-[#7b5338] ring-1 ring-[#ff8a2b]/16">
                 Ofertas diarias no WhatsApp
               </span>
             </div>
-          </div>
-
-          <div className="mt-8 flex w-full max-w-2xl flex-wrap justify-center gap-3">
-            {['Panelas antiaderentes', 'Organizadores praticos', 'Utensilios do dia'].map(
-              (item, index) => (
-                <div
-                  key={item}
-                  className="inline-flex items-center gap-3 rounded-full border border-[#ff9f43]/18 bg-white/68 px-4 py-3 shadow-[0_10px_24px_rgb(255_106_0/9%)] backdrop-blur"
-                >
-                  <span className="text-sm font-black uppercase text-[#3b2417]">
-                    {item}
-                  </span>
-                  <span className="rounded-full bg-[#ffe088] px-3 py-1 text-sm font-black text-[#5a3300]">
-                    -{35 + index * 10}%
-                  </span>
-                </div>
-              ),
-            )}
           </div>
         </div>
       </section>
