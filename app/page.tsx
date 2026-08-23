@@ -14,13 +14,31 @@ function WhatsAppIcon() {
 export default function Home() {
   return (
     <main className="min-h-dvh overflow-hidden bg-[#050505] text-white">
-      <section className="relative flex min-h-dvh items-center">
+      <section className="relative flex min-h-dvh flex-col">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_50%,rgba(255,87,0,0.42),transparent_32%),linear-gradient(135deg,#050505_0%,#111111_46%,#ff4b00_46%,#ff6500_100%)]" />
         <div className="absolute -right-24 top-8 h-[430px] w-[430px] rounded-full border-[18px] border-white/90 opacity-25 max-md:hidden" />
         <div className="absolute bottom-8 left-0 h-1.5 w-1/3 bg-[#ffc928]" />
 
-        <div className="relative mx-auto grid w-full max-w-6xl grid-cols-[1.05fr_0.95fr] items-center gap-8 px-5 py-8 max-lg:grid-cols-1 max-lg:gap-5 sm:px-8 lg:px-10">
-          <div className="max-w-[650px]">
+        <header className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+          <a href="/" className="flex items-center gap-3" aria-label="Achadinhos & Ofertas do Dia">
+            <img
+              src="/logo-achadinhos-redonda.png"
+              alt="Achadinhos e Ofertas do Dia"
+              className="h-16 w-16 rounded-full object-cover shadow-[0_10px_26px_rgb(0_0_0/35%)] ring-4 ring-white"
+            />
+            <span className="hidden text-sm font-black uppercase leading-tight text-white sm:block">
+              Achadinhos
+              <br />
+              <span className="text-[#ffc928]">& Ofertas</span>
+            </span>
+          </a>
+          <span className="rounded-full bg-black/50 px-4 py-2 text-xs font-black uppercase text-white/85 ring-1 ring-white/14">
+            do dia
+          </span>
+        </header>
+
+        <div className="relative mx-auto grid w-full max-w-6xl flex-1 grid-cols-[1.08fr_0.92fr] items-center gap-8 px-5 pb-8 pt-2 max-lg:grid-cols-1 max-lg:gap-5 sm:px-8 lg:px-10">
+          <div className="max-w-[680px]">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-xs font-black uppercase text-[#ffc928] shadow-[0_12px_30px_rgb(0_0_0/22%)] backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-[#ff5a00]" />
               Produtos de cozinha em oferta
@@ -49,13 +67,22 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto flex w-full max-w-[500px] items-center justify-center max-lg:max-w-[330px]">
-            <div className="absolute aspect-square w-[86%] rounded-full bg-[#ff5a00] shadow-[0_30px_80px_rgb(0_0_0/45%)] ring-[10px] ring-white" />
-            <img
-              src="/logo-achadinhos.png"
-              alt="Achadinhos e Ofertas do Dia"
-              className="relative z-10 aspect-square w-full object-contain drop-shadow-[0_24px_28px_rgb(0_0_0/45%)]"
-            />
+          <div className="relative mx-auto grid w-full max-w-[440px] gap-3 max-lg:max-w-[360px]">
+            {['Panelas antiaderentes', 'Organizadores praticos', 'Utensilios do dia'].map(
+              (item, index) => (
+                <div
+                  key={item}
+                  className="flex items-center justify-between rounded-[8px] border border-white/14 bg-black/56 px-5 py-4 shadow-[0_18px_40px_rgb(0_0_0/28%)] backdrop-blur"
+                >
+                  <span className="text-base font-black uppercase text-white">
+                    {item}
+                  </span>
+                  <span className="rounded-full bg-[#ffc928] px-3 py-1 text-sm font-black text-black">
+                    -{35 + index * 10}%
+                  </span>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </section>
