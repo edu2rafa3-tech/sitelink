@@ -99,8 +99,16 @@ export default function Home() {
               Produtos de cozinha em oferta
             </div>
 
-            <h1 className="text-balance text-4xl font-bold leading-[1.02] tracking-normal text-[#24150d] sm:text-6xl">
-              SEU PRÓXIMO LOOK PODE ESTAR AQUI
+            <h1 className="text-balance text-center leading-[1.03] tracking-normal text-[#24150d]">
+              <span className="block text-3xl font-semibold sm:text-5xl">
+                Seu próximo
+              </span>
+              <span className="mx-auto mt-1 inline-flex rounded-full border border-[#ff8a2b]/18 bg-white/72 px-4 py-1 text-4xl font-extrabold text-[#ff6a00] shadow-[0_14px_34px_rgb(255_106_0/14%),inset_0_1px_0_rgb(255_255_255/80%)] sm:text-6xl">
+                LOOK
+              </span>
+              <span className="mt-2 block text-3xl font-semibold sm:text-5xl">
+                pode estar aqui
+              </span>
             </h1>
 
             <p className="mt-4 max-w-2xl text-lg font-medium leading-7 text-[#6b4a35] max-sm:text-base">
