@@ -100,11 +100,11 @@ export default function Home() {
             </div>
 
             <h1 className="text-balance text-4xl font-bold leading-[1.02] tracking-normal text-[#24150d] sm:text-6xl">
-              Achadinhos para deixar sua cozinha mais prática
+              SEU PRÓXIMO LOOK PODE ESTAR AQUI
             </h1>
 
             <p className="mt-4 max-w-2xl text-lg font-medium leading-7 text-[#6b4a35] max-sm:text-base">
-              Garimpamos utensílios, organizadores e pequenos eletros com preço
+              Garimpamos achadinhos, tendências e ofertas especiais com preço
               bom para você aproveitar antes que acabe.
             </p>
 
