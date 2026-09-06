@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Achadinhos & Ofertas do Dia',
   description:
-    'Grupo de ofertas com achadinhos para cozinha, utensílios, organizadores e pequenos eletros.',
+    'Grupo de ofertas com achadinhos de moda, looks selecionados, cupons e tendências.',
 };
 
 export default function RootLayout({

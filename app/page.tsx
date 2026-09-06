@@ -14,13 +14,13 @@ function WhatsAppIcon() {
 const tickerMessages = [
   'Ofertas do dia',
   'Até 60% off',
-  'Achadinhos para cozinha',
+  'Looks selecionados',
   'Cupons selecionados',
   'Promoções relâmpago',
   'Novidades no grupo',
 ];
 
-const logoBadges = ['Até 60% off', 'Cupons do dia', 'Só achadinhos'];
+const logoBadges = ['Até 60% off', 'Cupons do dia', 'Looks selecionados'];
 
 const benefitCards = [
   {
@@ -29,7 +29,7 @@ const benefitCards = [
   },
   {
     title: 'Compra mais prática',
-    text: 'Utensílios, organização e pequenos eletros em um só lugar.',
+    text: 'Peças, acessórios e tendências em um só lugar.',
   },
 ];
 
@@ -96,19 +96,12 @@ export default function Home() {
           <div className="flex max-w-[760px] flex-col items-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#ff8a2b]/20 bg-white/72 px-3.5 py-1.5 text-xs font-bold uppercase text-[#c95000] shadow-[0_12px_30px_rgb(255_106_0/10%)] backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-[#25d366]" />
-              Produtos de cozinha em oferta
+              Achadinhos de moda em oferta
             </div>
 
-            <h1 className="text-balance text-center leading-[1.03] tracking-normal text-[#24150d]">
-              <span className="block text-3xl font-semibold sm:text-5xl">
-                Seu próximo
-              </span>
-              <span className="mx-auto mt-1 inline-flex rounded-full border border-[#ff8a2b]/18 bg-white/72 px-4 py-1 text-4xl font-extrabold text-[#ff6a00] shadow-[0_14px_34px_rgb(255_106_0/14%),inset_0_1px_0_rgb(255_255_255/80%)] sm:text-6xl">
-                LOOK
-              </span>
-              <span className="mt-2 block text-3xl font-semibold sm:text-5xl">
-                pode estar aqui
-              </span>
+            <h1 className="text-balance text-center text-4xl font-semibold leading-[1.04] tracking-normal text-[#24150d] sm:text-6xl">
+              Seu próximo <span className="text-[#ff6a00]">look</span> pode
+              estar aqui
             </h1>
 
             <p className="mt-4 max-w-2xl text-lg font-medium leading-7 text-[#6b4a35] max-sm:text-base">
