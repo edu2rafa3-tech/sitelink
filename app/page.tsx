@@ -58,8 +58,12 @@ export default function Home() {
             </p>
 
             <h1 className="mx-auto mt-2 max-w-[340px] text-balance text-3xl font-bold leading-[1.08] tracking-normal text-white sm:text-4xl">
-              Seu próximo look pode estar aqui
+              TE AJUDO A COMPRAR BARATO!
             </h1>
+
+            <p className="mx-auto mt-3 max-w-[320px] text-xl font-bold leading-7 text-[#ffb169]">
+              As melhores promoções estão aqui!
+            </p>
 
             <p className="mx-auto mt-4 max-w-[330px] text-base font-medium leading-7 text-[#c9a996]">
               Entre para o grupo e receba promoções, cupons e achadinhos
