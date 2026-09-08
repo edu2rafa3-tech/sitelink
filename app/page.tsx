@@ -107,10 +107,6 @@ export default function Home() {
               ))}
             </div>
 
-            <p className="mt-6 text-sm font-medium text-[#8f7060]">
-              <span className="font-bold text-[#ff8a2b]">529</span> pessoas já
-              entraram hoje
-            </p>
           </div>
         </div>
       </section>
