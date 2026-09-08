@@ -20,16 +20,21 @@ const tickerMessages = [
   'Novidades no grupo',
 ];
 
-const logoBadges = ['Até 60% off', 'Cupons do dia', 'Looks selecionados'];
-
-const benefitCards = [
+const highlights = [
   {
-    title: 'Ofertas verificadas',
-    text: 'Achados selecionados antes de aparecerem no grupo.',
+    title: 'Promoções',
+    text: 'diárias',
+    icon: 'M13 2 4 14h7l-1 8 10-13h-7l1-7Z',
   },
   {
-    title: 'Compra mais prática',
-    text: 'Peças, acessórios e tendências em um só lugar.',
+    title: 'Cupons',
+    text: 'selecionados',
+    icon: 'M4 7a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v2.2a2.8 2.8 0 0 0 0 5.6V17a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3v-2.2a2.8 2.8 0 0 0 0-5.6V7Z',
+  },
+  {
+    title: 'Achados',
+    text: 'com estilo',
+    icon: 'm21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z',
   },
 ];
 
@@ -37,10 +42,10 @@ export default function Home() {
   const marqueeItems = [...tickerMessages, ...tickerMessages];
 
   return (
-    <main className="min-h-dvh overflow-hidden bg-[#fff9f0] text-[#24150d]">
-      <section className="relative flex min-h-dvh flex-col">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(255,106,0,0.18),transparent_34%),radial-gradient(circle_at_18%_82%,rgba(255,201,40,0.22),transparent_28%),linear-gradient(180deg,#fffaf2_0%,#fff3e1_58%,#ffe8cf_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/60 to-transparent" />
+    <main className="min-h-dvh overflow-hidden bg-[#fff7ed] text-[#24150d]">
+      <section className="relative flex min-h-dvh flex-col bg-[linear-gradient(180deg,#fffaf4_0%,#fff2e2_54%,#ffe5c8_100%)]">
+        <div className="absolute inset-0 opacity-[0.38] [background-image:linear-gradient(135deg,rgba(255,106,0,0.12)_0_1px,transparent_1px_18px)]" />
+        <div className="absolute inset-x-0 top-10 h-px bg-gradient-to-r from-transparent via-[#ff8a2b]/30 to-transparent" />
 
         <div className="relative z-20 w-full overflow-hidden border-b border-[#ff8a2b]/16 bg-white/58 py-2 shadow-[0_10px_30px_rgb(255_106_0/8%)] backdrop-blur-md">
           <div className="marquee-track flex w-max items-center gap-4">
@@ -56,69 +61,48 @@ export default function Home() {
           </div>
         </div>
 
-        <header className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4 pt-4 sm:px-6">
-          <div className="absolute left-1/2 top-12 hidden h-px w-[min(72vw,520px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#ff8a2b]/28 to-transparent sm:block" />
-          <span className="absolute left-[14%] top-12 hidden rounded-full border border-[#ff8a2b]/18 bg-white/62 px-3 py-1.5 text-xs font-semibold text-[#a94a0a] shadow-[0_10px_24px_rgb(255_106_0/9%)] backdrop-blur sm:inline-flex">
-            ofertas fresquinhas
-          </span>
-          <span className="absolute right-[14%] top-12 hidden rounded-full border border-[#25d366]/20 bg-white/62 px-3 py-1.5 text-xs font-semibold text-[#168f45] shadow-[0_10px_24px_rgb(37_211_102/10%)] backdrop-blur sm:inline-flex">
-            direto no WhatsApp
-          </span>
-          <a
-            href="/"
-            className="relative flex flex-col items-center gap-2 text-center"
-            aria-label="Achadinhos & Ofertas do Dia"
-          >
-            <img
-              src="/logo-achadinhos-redonda.png"
-              alt="Achadinhos e Ofertas do Dia"
-              className="h-20 w-20 rounded-full object-cover shadow-[0_10px_24px_rgb(255_106_0/16%)] ring-4 ring-white sm:h-24 sm:w-24"
-            />
-            <span className="text-sm font-bold uppercase leading-tight text-[#24150d]">
-              Achadinhos
-              <br />
-              <span className="text-[#ff6a00]">& Ofertas</span>
-            </span>
-          </a>
-          <div className="mt-3 flex max-w-[330px] flex-wrap justify-center gap-2">
-            {logoBadges.map((badge) => (
-              <span
-                key={badge}
-                className="rounded-full border border-[#ff8a2b]/18 bg-white/66 px-3 py-1.5 text-xs font-semibold text-[#a94a0a] shadow-[0_8px_20px_rgb(255_106_0/8%)] backdrop-blur"
-              >
-                {badge}
+        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 items-center justify-center px-4 py-6 text-center sm:px-6 sm:py-8">
+          <div className="w-full">
+            <a
+              href="/"
+              className="mx-auto flex w-fit flex-col items-center gap-2"
+              aria-label="Achadinhos & Ofertas do Dia"
+            >
+              <img
+                src="/logo-achadinhos-redonda.png"
+                alt="Achadinhos e Ofertas do Dia"
+                className="h-24 w-24 rounded-full object-cover shadow-[0_14px_30px_rgb(255_106_0/18%)] ring-4 ring-white sm:h-28 sm:w-28"
+              />
+              <span className="text-sm font-bold uppercase leading-tight text-[#24150d]">
+                Achadinhos
+                <br />
+                <span className="text-[#ff6a00]">& Ofertas</span>
               </span>
-            ))}
-          </div>
-        </header>
+            </a>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-start px-4 pb-6 pt-5 text-center sm:px-6 sm:pt-8">
-          <div className="flex max-w-[760px] flex-col items-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#ff8a2b]/20 bg-white/72 px-3.5 py-1.5 text-xs font-bold uppercase text-[#c95000] shadow-[0_12px_30px_rgb(255_106_0/10%)] backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-[#25d366]" />
-              Achadinhos de moda em oferta
-            </div>
+            <div className="mx-auto mt-5 max-w-2xl border-y border-[#ff8a2b]/18 py-5 sm:mt-6 sm:py-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#c95000]">
+                Ofertas e descontos todos os dias
+              </p>
 
-            <h1 className="text-balance text-center text-4xl font-semibold leading-[1.04] tracking-normal text-[#24150d] sm:text-6xl">
-              Seu próximo <span className="text-[#ff6a00]">look</span> pode
-              estar aqui
-            </h1>
+              <h1 className="mx-auto mt-3 max-w-xl text-balance text-4xl font-semibold leading-[1.05] tracking-normal text-[#24150d] sm:text-6xl">
+                Seu próximo <span className="text-[#ff6a00]">look</span> pode
+                estar aqui
+              </h1>
 
-            <p className="mt-4 max-w-2xl text-lg font-medium leading-7 text-[#6b4a35] max-sm:text-base">
-              Garimpamos achadinhos, tendências e ofertas especiais com preço
-              bom para você aproveitar antes que acabe.
-            </p>
+              <p className="mx-auto mt-4 max-w-lg text-base font-medium leading-7 text-[#6b4a35] sm:text-lg">
+                Entre no grupo e receba promoções, cupons e achadinhos
+                selecionados para aproveitar antes que acabe.
+              </p>
 
-            <div className="mt-6 flex flex-col items-center gap-2.5 sm:flex-row">
               <a
                 href="https://chat.whatsapp.com/Iqzfyh1mGPqKMP9QqpO2EO"
-                className="group relative inline-flex min-h-14 items-center gap-3 overflow-hidden rounded-full bg-[#16c75a] px-4 py-3 text-sm font-bold uppercase text-white shadow-[0_16px_34px_rgb(22_199_90/30%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#0fa84a]/20 transition hover:-translate-y-0.5 hover:bg-[#13b650] hover:shadow-[0_20px_42px_rgb(22_199_90/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/26 sm:px-7 sm:text-base"
+                className="group mx-auto mt-5 inline-flex min-h-14 w-full max-w-[380px] items-center justify-center gap-3 rounded-full bg-[#17c964] px-5 py-3.5 text-base font-bold text-white shadow-[0_18px_34px_rgb(23_201_100/30%),inset_0_1px_0_rgb(255_255_255/42%)] ring-1 ring-[#0ea34d]/20 transition hover:-translate-y-0.5 hover:bg-[#13b958] hover:shadow-[0_22px_42px_rgb(23_201_100/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/28"
               >
-                <span className="absolute inset-x-6 top-0 h-px bg-white/55" />
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
                   <WhatsAppIcon />
                 </span>
-                <span className="leading-none">quero entrar no grupo</span>
+                <span>Quero entrar no grupo</span>
                 <span
                   aria-hidden="true"
                   className="grid h-7 w-7 place-items-center rounded-full bg-white/16 transition group-hover:translate-x-0.5"
@@ -129,7 +113,7 @@ export default function Home() {
                     stroke="currentColor"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth="2.5"
+                    strokeWidth="2.4"
                     viewBox="0 0 24 24"
                   >
                     <path d="M5 12h14" />
@@ -137,28 +121,34 @@ export default function Home() {
                   </svg>
                 </span>
               </a>
-              <span className="rounded-full bg-white/72 px-3.5 py-2.5 text-sm font-semibold text-[#7b5338] ring-1 ring-[#ff8a2b]/16">
-                Ofertas diárias no WhatsApp
-              </span>
             </div>
 
-            <div className="mt-5 w-full max-w-3xl rounded-[22px] border border-white/70 bg-white/52 p-2.5 shadow-[0_18px_50px_rgb(123_69_23/10%)] backdrop-blur-md">
-              <div className="grid gap-2.5 sm:grid-cols-3">
-                {benefitCards.map((card) => (
-                  <div
-                    key={card.title}
-                    className="rounded-[16px] border border-[#ff8a2b]/12 bg-[#fffaf4]/76 px-4 py-3 text-left shadow-[inset_0_1px_0_rgb(255_255_255/70%)]"
+            <div className="mx-auto mt-5 grid max-w-xl grid-cols-3 divide-x divide-[#ff8a2b]/18 rounded-[22px] border border-[#ff8a2b]/14 bg-white/58 px-2 py-3 shadow-[0_16px_34px_rgb(123_69_23/8%)] backdrop-blur">
+              {highlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex min-h-16 flex-col items-center justify-center px-2 text-center"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="mb-1.5 h-5 w-5 text-[#ff6a00]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.1"
+                    viewBox="0 0 24 24"
                   >
-                    <span className="mb-2 block h-1.5 w-8 rounded-full bg-[#ff8a2b]" />
-                    <h2 className="text-sm font-bold text-[#2b170d]">
-                      {card.title}
-                    </h2>
-                    <p className="mt-1 text-sm font-medium leading-5 text-[#7b5338]">
-                      {card.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
+                    <path d={item.icon} />
+                  </svg>
+                  <strong className="text-xs font-bold uppercase leading-4 text-[#2b170d] sm:text-sm">
+                    {item.title}
+                  </strong>
+                  <span className="text-xs font-semibold leading-4 text-[#8a5b3c]">
+                    {item.text}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
