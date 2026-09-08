@@ -26,6 +26,33 @@ body {
   animation: marquee-scroll 22s linear infinite;
 }
 
+.cta-button {
+  animation: cta-pulse 1.8s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+.cta-button::before {
+  animation: cta-shine 2.4s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 0.68),
+    transparent
+  );
+  content: '';
+  height: 160%;
+  left: -45%;
+  position: absolute;
+  top: -30%;
+  transform: rotate(18deg);
+  width: 34%;
+}
+
+.cta-button > * {
+  position: relative;
+  z-index: 1;
+}
+
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);
@@ -33,5 +60,40 @@ body {
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes cta-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 18px 34px rgb(24 201 99 / 28%),
+      inset 0 1px 0 rgb(255 255 255 / 40%);
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    box-shadow:
+      0 24px 46px rgb(24 201 99 / 42%),
+      inset 0 1px 0 rgb(255 255 255 / 46%);
+    transform: translateY(-2px) scale(1.025);
+  }
+}
+
+@keyframes cta-shine {
+  0% {
+    left: -45%;
+  }
+
+  46%,
+  100% {
+    left: 118%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button,
+  .cta-button::before {
+    animation: none;
   }
 }
