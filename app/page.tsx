@@ -72,13 +72,14 @@ export default function Home() {
 
             <a
               href="https://chat.whatsapp.com/Iqzfyh1mGPqKMP9QqpO2EO"
-              className="cta-button group relative mx-auto mt-7 inline-flex min-h-14 w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-[#18c963] px-5 py-4 text-base font-bold text-white shadow-[0_18px_34px_rgb(24_201_99/28%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#67f09c]/30 transition hover:bg-[#15b95a] focus:outline-none focus:ring-4 focus:ring-[#25d366]/28"
+              className="cta-button group relative isolate mx-auto mt-7 inline-flex min-h-14 w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-[#18c963] px-5 py-4 text-base font-bold text-white shadow-[0_18px_34px_rgb(24_201_99/28%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#67f09c]/30 transition hover:bg-[#15b95a] focus:outline-none focus:ring-4 focus:ring-[#25d366]/28"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
+              <span className="cta-button-shine" aria-hidden="true" />
+              <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
                 <WhatsAppIcon />
               </span>
-              <span>Quero entrar no grupo</span>
-              <span className="text-[#eafff0]" aria-hidden="true">
+              <span className="relative z-10">Quero entrar no grupo</span>
+              <span className="relative z-10 text-[#eafff0]" aria-hidden="true">
                 +
               </span>
             </a>
