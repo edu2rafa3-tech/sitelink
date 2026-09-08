@@ -11,58 +11,36 @@ function WhatsAppIcon() {
   );
 }
 
-const tickerMessages = [
-  'Ofertas do dia',
-  'Até 60% off',
-  'Looks selecionados',
-  'Cupons selecionados',
-  'Promoções relâmpago',
-  'Novidades no grupo',
-];
-
 const highlights = [
   {
     title: 'Promoções',
-    text: 'diárias',
+    text: 'Diárias',
     icon: 'M13 2 4 14h7l-1 8 10-13h-7l1-7Z',
   },
   {
     title: 'Cupons',
-    text: 'selecionados',
+    text: 'Exclusivos',
     icon: 'M4 7a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v2.2a2.8 2.8 0 0 0 0 5.6V17a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3v-2.2a2.8 2.8 0 0 0 0-5.6V7Z',
   },
   {
-    title: 'Achados',
-    text: 'com estilo',
+    title: 'Seleção',
+    text: 'Curada',
     icon: 'm21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z',
   },
 ];
 
 export default function Home() {
-  const marqueeItems = [...tickerMessages, ...tickerMessages];
-
   return (
-    <main className="min-h-dvh overflow-hidden bg-[#fff7ed] text-[#24150d]">
-      <section className="relative flex min-h-dvh flex-col bg-[linear-gradient(180deg,#fffaf4_0%,#fff2e2_54%,#ffe5c8_100%)]">
-        <div className="absolute inset-0 opacity-[0.38] [background-image:linear-gradient(135deg,rgba(255,106,0,0.12)_0_1px,transparent_1px_18px)]" />
-        <div className="absolute inset-x-0 top-10 h-px bg-gradient-to-r from-transparent via-[#ff8a2b]/30 to-transparent" />
+    <main className="min-h-dvh overflow-hidden bg-[#080301] text-[#fff8ef]">
+      <section className="relative grid min-h-dvh place-items-center px-4 py-7 sm:px-6">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#140803_0%,#080301_48%,#020100_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,106,0,0.20),transparent_48%)]" />
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#ff6a00]/10 to-transparent" />
 
-        <div className="relative z-20 w-full overflow-hidden border-b border-[#ff8a2b]/16 bg-white/58 py-2 shadow-[0_10px_30px_rgb(255_106_0/8%)] backdrop-blur-md">
-          <div className="marquee-track flex w-max items-center gap-4">
-            {marqueeItems.map((message, index) => (
-              <span
-                key={`${message}-${index}`}
-                className="inline-flex items-center gap-4 text-xs font-bold uppercase text-[#b94700]"
-              >
-                <span>{message}</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-[#25d366]" />
-              </span>
-            ))}
-          </div>
-        </div>
+        <div className="relative z-10 w-full max-w-[430px] rounded-[28px] border border-[#ff6a00]/25 bg-[#120803]/92 px-5 py-7 text-center shadow-[0_32px_90px_rgb(0_0_0/58%),inset_0_1px_0_rgb(255_255_255/8%)] sm:px-6 sm:py-8">
+          <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-[linear-gradient(180deg,rgba(255,106,0,0.08),transparent_34%,rgba(255,106,0,0.04))]" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 items-center justify-center px-4 py-6 text-center sm:px-6 sm:py-8">
-          <div className="w-full">
+          <div className="relative">
             <a
               href="/"
               className="mx-auto flex w-fit flex-col items-center gap-2"
@@ -71,67 +49,45 @@ export default function Home() {
               <img
                 src="/logo-achadinhos-redonda.png"
                 alt="Achadinhos e Ofertas do Dia"
-                className="h-24 w-24 rounded-full object-cover shadow-[0_14px_30px_rgb(255_106_0/18%)] ring-4 ring-white sm:h-28 sm:w-28"
+                className="h-24 w-24 rounded-full object-cover shadow-[0_12px_28px_rgb(255_106_0/30%)] ring-2 ring-[#ffb56b]/70 sm:h-28 sm:w-28"
               />
-              <span className="text-sm font-bold uppercase leading-tight text-[#24150d]">
-                Achadinhos
-                <br />
-                <span className="text-[#ff6a00]">& Ofertas</span>
+            </a>
+
+            <p className="mt-6 text-sm font-semibold text-[#ffb169]">
+              Ofertas e descontos todos os dias
+            </p>
+
+            <h1 className="mx-auto mt-2 max-w-[340px] text-balance text-3xl font-bold leading-[1.08] tracking-normal text-white sm:text-4xl">
+              Seu próximo look pode estar aqui
+            </h1>
+
+            <p className="mx-auto mt-4 max-w-[330px] text-base font-medium leading-7 text-[#c9a996]">
+              Entre para o grupo e receba promoções, cupons e achadinhos
+              selecionados para você economizar.
+            </p>
+
+            <a
+              href="https://chat.whatsapp.com/Iqzfyh1mGPqKMP9QqpO2EO"
+              className="group mx-auto mt-7 inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-2xl bg-[#18c963] px-5 py-4 text-base font-bold text-white shadow-[0_18px_34px_rgb(24_201_99/28%),inset_0_1px_0_rgb(255_255_255/40%)] ring-1 ring-[#67f09c]/30 transition hover:-translate-y-0.5 hover:bg-[#15b95a] hover:shadow-[0_22px_42px_rgb(24_201_99/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/28"
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
+                <WhatsAppIcon />
+              </span>
+              <span>Quero entrar no grupo</span>
+              <span className="text-[#eafff0]" aria-hidden="true">
+                +
               </span>
             </a>
 
-            <div className="mx-auto mt-5 max-w-2xl border-y border-[#ff8a2b]/18 py-5 sm:mt-6 sm:py-6">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#c95000]">
-                Ofertas e descontos todos os dias
-              </p>
-
-              <h1 className="mx-auto mt-3 max-w-xl text-balance text-4xl font-semibold leading-[1.05] tracking-normal text-[#24150d] sm:text-6xl">
-                Seu próximo <span className="text-[#ff6a00]">look</span> pode
-                estar aqui
-              </h1>
-
-              <p className="mx-auto mt-4 max-w-lg text-base font-medium leading-7 text-[#6b4a35] sm:text-lg">
-                Entre no grupo e receba promoções, cupons e achadinhos
-                selecionados para aproveitar antes que acabe.
-              </p>
-
-              <a
-                href="https://chat.whatsapp.com/Iqzfyh1mGPqKMP9QqpO2EO"
-                className="group mx-auto mt-5 inline-flex min-h-14 w-full max-w-[380px] items-center justify-center gap-3 rounded-full bg-[#17c964] px-5 py-3.5 text-base font-bold text-white shadow-[0_18px_34px_rgb(23_201_100/30%),inset_0_1px_0_rgb(255_255_255/42%)] ring-1 ring-[#0ea34d]/20 transition hover:-translate-y-0.5 hover:bg-[#13b958] hover:shadow-[0_22px_42px_rgb(23_201_100/34%),inset_0_1px_0_rgb(255_255_255/42%)] focus:outline-none focus:ring-4 focus:ring-[#25d366]/28"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#16a34a] shadow-[inset_0_-1px_0_rgb(0_0_0/8%)]">
-                  <WhatsAppIcon />
-                </span>
-                <span>Quero entrar no grupo</span>
-                <span
-                  aria-hidden="true"
-                  className="grid h-7 w-7 place-items-center rounded-full bg-white/16 transition group-hover:translate-x-0.5"
-                >
-                  <svg
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.4"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="m13 6 6 6-6 6" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-
-            <div className="mx-auto mt-5 grid max-w-xl grid-cols-3 divide-x divide-[#ff8a2b]/18 rounded-[22px] border border-[#ff8a2b]/14 bg-white/58 px-2 py-3 shadow-[0_16px_34px_rgb(123_69_23/8%)] backdrop-blur">
+            <div className="mt-6 grid grid-cols-3 gap-2.5">
               {highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="flex min-h-16 flex-col items-center justify-center px-2 text-center"
+                  className="flex min-h-[88px] flex-col items-center justify-center rounded-2xl border border-[#ff6a00]/18 bg-[#201006] px-2 text-center shadow-[inset_0_1px_0_rgb(255_255_255/7%)]"
                 >
                   <svg
                     aria-hidden="true"
-                    className="mb-1.5 h-5 w-5 text-[#ff6a00]"
+                    className="mb-2 h-5 w-5 text-[#ff8a2b]"
                     fill="none"
                     stroke="currentColor"
                     strokeLinecap="round"
@@ -141,15 +97,20 @@ export default function Home() {
                   >
                     <path d={item.icon} />
                   </svg>
-                  <strong className="text-xs font-bold uppercase leading-4 text-[#2b170d] sm:text-sm">
+                  <strong className="text-xs font-bold leading-4 text-[#f8eadf]">
                     {item.title}
                   </strong>
-                  <span className="text-xs font-semibold leading-4 text-[#8a5b3c]">
+                  <span className="text-xs font-medium leading-4 text-[#b88f78]">
                     {item.text}
                   </span>
                 </div>
               ))}
             </div>
+
+            <p className="mt-6 text-sm font-medium text-[#8f7060]">
+              <span className="font-bold text-[#ff8a2b]">529</span> pessoas já
+              entraram hoje
+            </p>
           </div>
         </div>
       </section>
